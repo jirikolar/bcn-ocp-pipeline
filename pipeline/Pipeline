@@ -55,7 +55,7 @@ stage('Build war') {
   // Publish the built war file to Nexus
   stage('Publish to Nexus') {
     echo "Publish to Nexus"
-  sh "${mvnCmd} deploy -DskipTests=true -DaltDeploymentRepository=nexus::default::http://nexus3.xyz-nexus.svc.bcn.example.opentlc.com:8081/repository/releases"
+  sh "${mvnCmd} deploy -DskipTests=true -DaltDeploymentRepository=nexus::default::http://nexus3.xyz-nexus.svc.bcn.example.opentlc.com/repository/releases"
   }
 
   // Build the OpenShift Image in OpenShift and tag it.
